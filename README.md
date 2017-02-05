@@ -1,7 +1,7 @@
 # firstGame
 ***
 ***
-## How to run
+## Usage
 ***
 Simply open the index.html with the browser
 ## Rules
