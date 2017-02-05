@@ -1,4 +1,4 @@
-(function Resources(window){
+(function Resources(win){
   var loaded = [],
       readyCallbacks = [];
 
@@ -40,7 +40,7 @@
     readyCallbacks.push(func);
   }
 
-  window.Resources = {
+  win.Resources = {
     load: load,
     get: get,
     onReady: onReady

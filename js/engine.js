@@ -1,7 +1,5 @@
-(function Engine(global){
-    var doc    = global.document,
-        win    = global.window,
-        canvas = doc.createElement("canvas"),
+(function Engine(doc, win){
+    var canvas = doc.createElement("canvas"),
         ctx    = canvas.getContext("2d"),
         lastTime;
     canvas.width  = 505;
@@ -52,4 +50,4 @@
         "images/grass-block.png",
         "images/grass-block.png"
       ]);
-})(this);
+})(this.document, this.window);
