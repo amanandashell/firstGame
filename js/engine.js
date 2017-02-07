@@ -1,4 +1,4 @@
-(function Engine(doc, win){
+(function Engine(doc, win, global){
     var canvas = doc.createElement("canvas"),
         ctx    = canvas.getContext("2d"),
         lastTime;
@@ -10,8 +10,8 @@
     function main(){
       var now = Date.now(),
           dt  = (now - lastTime)/1000.0;
-
       renderField();
+      update(dt);
       lastTime = now;
       win.requestAnimationFrame(main);
     };
@@ -19,6 +19,14 @@
     function init(){
       lastTime = Date.now();
       main();
+    };
+
+    function update(dt){
+      updateEntities(dt);
+    };
+
+    function updateEntities(dt){
+      player.update(dt);
     };
 
     function renderField(){
@@ -50,4 +58,5 @@
         "images/grass-block.png",
         "images/grass-block.png"
       ]);
-})(this.document, this.window);
+    global.ctx = ctx;
+})(this.document, this.window, this);
